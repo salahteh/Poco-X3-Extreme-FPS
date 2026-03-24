@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALAH .DZ | ملفات POCO X3 Pro</title>
+    <title>SALAH .DZ | تحسين أداء POCO X3 Pro</title>
     <style>
         :root {
-            --evox-blue: #7baaf7; /* لون نظام إيفولوشن X */
+            --evox-blue: #7baaf7;
             --dark-bg: #0b0e14;
         }
         body {
@@ -22,65 +22,74 @@
         .card {
             background: #161b22;
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--evox-blue);
+            width: 90%;
             max-width: 400px;
-            width: 85%;
-            border-top: 4px solid var(--evox-blue);
         }
-        .logo { font-size: 24px; font-weight: bold; color: var(--evox-blue); margin-bottom: 10px; }
-        .info { font-size: 14px; color: #8b949e; margin-bottom: 25px; }
-        
+        h2 { color: var(--evox-blue); margin-bottom: 10px; }
+        p { color: #8b949e; font-size: 14px; }
+        .timer-text { font-weight: bold; color: #ffcc00; margin: 15px 0; display: none; }
         .btn {
             background-color: var(--evox-blue);
-            color: #0d1117;
+            color: #0b0e14;
             border: none;
-            padding: 15px 25px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
+            padding: 15px 30px;
+            border-radius: 8px;
             font-weight: bold;
+            cursor: pointer;
             width: 100%;
-            transition: 0.3s;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
         }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        #download-section { display: none; margin-top: 20px; }
-        .success-msg { color: #3fb950; font-weight: bold; margin-bottom: 10px; }
+        .btn-download {
+            background-color: #2ea44f;
+            color: white;
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <div class="logo">SALAH .DZ</div>
-    <h3>تحسين أداء Poco X3 Pro</h3>
-    <p class="info">اضغط على الزر بالأسفل لتجهيز رابط التحميل المباشر.</p>
-
-    <div id="step-1">
-        <button class="btn" onclick="openAdAndShowLink()">فتح رابط التحميل</button>
-    </div>
-
-    <div id="download-section">
-        <p class="success-msg">✅ تم فتح الرابط بنجاح!</p>
-        <p style="font-size: 13px;">اضغط بالأسفل للحصول على الملف النهائي:</p>
-        <a href="ضع_رابط_ميديافاير_هنا" class="btn" style="text-decoration: none; display: block; background-color: #3fb950; color: white;">
-            تحميل الملف الحقيقي (Mediafire)
-        </a>
-    </div>
+    <h2>SALAH .DZ</h2>
+    <p>تجهيز ملف تحسين الأداء و FPS...</p>
+    
+    <button id="mainBtn" class="btn" onclick="startProcess()">فتح رابط التحميل</button>
+    
+    <div id="timerArea" class="timer-text">يرجى الانتظار <span id="seconds">10</span> ثانية...</div>
+    
+    <a id="downloadBtn" href="رابط_ميديا_فاير_هنا" class="btn btn-download">تحميل الملف الآن 📥</a>
 </div>
 
 <script>
-    // ضع رابط Adsterra المباشر هنا
+    // ضع رابط HilltopAds الخاص بك هنا
     const AD_LINK = "https://equatoriallip.com/WE984B";
 
-    function openAdAndShowLink() {
-        // 1. يفتح الإعلان في نافذة جديدة (Popup)
+    function startProcess() {
+        // 1. فتح الإعلان في نافذة جديدة
         window.open(AD_LINK, '_blank');
 
-        // 2. يخفي زر الإعلان ويظهر زر التحميل الحقيقي في نفس الصفحة
-        document.getElementById('step-1').style.display = 'none';
-        document.getElementById('download-section').style.display = 'block';
+        // 2. إخفاء الزر الأول وإظهار العداد
+        document.getElementById('mainBtn').style.display = 'none';
+        const timerArea = document.getElementById('timerArea');
+        timerArea.style.display = 'block';
+
+        // 3. بدء العد التنازلي
+        let timeLeft = 10;
+        const countdown = setInterval(() => {
+            timeLeft--;
+            document.getElementById('seconds').textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerArea.style.display = 'none';
+                document.getElementById('downloadBtn').style.display = 'block';
+            }
+        }, 1000);
     }
 </script>
 
