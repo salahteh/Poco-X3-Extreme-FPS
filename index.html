@@ -3,76 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poco X3 90 FPS - SALAH .DZ</title>
+    <title>Poco X3 120 FPS - SALAH .DZ</title>
     <link rel="preload" as="image" href="https://f.top4top.io/p_3736whw5q0.png">
     
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
-        .container { max-width: 400px; margin: auto; background: #111; padding: 20px; border-radius: 15px; border: 1px solid #00ffa3; box-shadow: 0 0 20px rgba(0,255,163,0.1); }
+        body { background-color: #050505; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
+        .container { max-width: 400px; margin: auto; background: #111; padding: 25px; border-radius: 20px; border: 1px solid #ff0055; box-shadow: 0 0 25px rgba(255,0,85,0.2); }
         
-        /* تحسين حاوية الصورة لمنع القفز عند التحميل */
-        .img-container {
-            width: 100%;
-            min-height: 200px; /* مساحة محجوزة للصورة قبل ظهورها */
-            background: #222;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
+        .img-container { width: 100%; min-height: 180px; background: #1a1a1a; border-radius: 12px; margin-bottom: 15px; overflow: hidden; }
         img { width: 100%; height: auto; display: block; }
         
-        button { background: #00ffa3; color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        h2 { color: #ff0055; margin-top: 0; text-shadow: 0 0 10px rgba(255,0,85,0.5); }
+        .fps-badge { background: #ff0055; color: white; padding: 5px 15px; border-radius: 50px; font-size: 14px; font-weight: bold; }
+
+        button { background: #ff0055; color: #fff; padding: 16px; border: none; border-radius: 10px; font-weight: bold; width: 100%; cursor: pointer; font-size: 17px; transition: 0.3s; margin-top: 15px; }
         button:disabled { background: #333; color: #777; cursor: not-allowed; }
-        #status { margin-top: 15px; color: #00ffa3; font-size: 14px; height: 20px; }
+        
+        #status { margin-top: 15px; color: #ff0055; font-size: 13px; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2 style="color:#00ffa3; margin-top: 0;">SALAH .DZ</h2>
+    <h2>SALAH .DZ <span class="fps-badge">120 FPS</span></h2>
     
     <div class="img-container">
-        <img src="https://f.top4top.io/p_3736whw5q0.png" alt="90 FPS Proof" loading="eager">
+        <img src="https://f.top4top.io/p_3736whw5q0.png" alt="120 FPS Proof" loading="eager">
     </div>
     
-    <p style="font-size: 14px; color: #bbb;">تجهيز ملف 90 FPS لجهاز Poco X3 Pro...</p>
-
-    <button id="btn" disabled>انتظر (<span id="timer">15</span>) ثانية</button>
-    <div id="status">جاري فحص ملفات النظام...</div>
-</div>
-
-<script>
-    let sec = 15;
-    const btn = document.getElementById('btn');
-    const timer = document.getElementById('timer');
-    const status = document.getElementById('status');
-
-    const adLink = "https://equatoriallip.com/WE984B";
-    const mediaLink = "https://www.mediafire.com/file/YOUR_FILE_LINK";
-
-    const counter = setInterval(() => {
-        sec--;
-        if(timer) timer.innerText = sec;
-        if (sec <= 0) {
-            clearInterval(counter);
-            btn.innerText = "تحميل الملف الآن 📥";
-            btn.disabled = false;
-            status.innerText = "جاهز للتحميل!";
-        }
-    }, 1000);
-
-    btn.onclick = () => {
-        window.open(adLink, '_blank');
-        status.innerText = "تم فتح الإعلان.. اضغط مجدداً للميديا فاير";
-        btn.innerText = "انقر هنا للميديا فاير ✅";
-        btn.style.background = "#ff9800";
-        btn.onclick = () => { window.location.href = mediaLink; };
-    };
-</script>
-
-</body>
-</html>
+    <p style="font-size: 14px; color: #ccc;">تفعيل
