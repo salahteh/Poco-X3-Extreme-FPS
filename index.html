@@ -5,97 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poco X3 Extreme FPS - SALAH .DZ</title>
     <style>
-        body {
-            background-color: #0f0f0f;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+        body { background-color: #0f0f0f; color: #e0e0e0; font-family: sans-serif; text-align: center; padding: 50px 20px; }
+        .container { max-width: 500px; margin: 0 auto; background: #1a1a1a; padding: 30px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         h1 { color: #00ffa3; font-size: 24px; }
-        p { font-size: 16px; margin-bottom: 25px; }
-        
-        #download-btn {
-            background-color: #00ffa3;
-            color: #000;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        
-        #download-btn:disabled {
-            background-color: #444;
-            color: #888;
-            cursor: not-allowed;
-        }
-
-        #timer {
-            font-weight: bold;
-            color: #ff4757;
-        }
-
-        .status-box {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #888;
-        }
+        #download-btn { background-color: #00ffa3; color: #000; padding: 15px 30px; border: none; border-radius: 8px; font-weight: bold; font-size: 18px; cursor: pointer; display: inline-block; transition: 0.3s; margin-top: 20px; }
+        #download-btn:disabled { background-color: #444; color: #888; cursor: not-allowed; }
+        #status-text { margin-top: 20px; font-size: 14px; color: #888; }
+        #timer { font-weight: bold; color: #ff4757; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>SALAH .DZ | Poco X3 Pro</h1>
-    <p>تجهيز ملف تحسين الأداء وفتح 90 FPS...</p>
+    <p>تجهيز ملف تحسين الأداء وفتح 90 FPS لجهازك...</p>
 
     <button id="download-btn" disabled>
         يرجى الانتظار (<span id="timer">15</span>) ثانية
     </button>
 
-    <div class="status-box" id="status-text">
-        يتم الآن فحص توافق الملف مع جهاز Poco X3 Pro...
-    </div>
+    <div id="status-text">يتم الآن فحص توافق الملف مع Poco X3 Pro...</div>
 </div>
 
 <script>
-    let timeLeft = 15; // عدد الثواني
-    const timerElement = document.getElementById('timer');
+    let timeLeft = 15;
     const downloadBtn = document.getElementById('download-btn');
+    const timerElement = document.getElementById('timer');
     const statusText = document.getElementById('status-text');
 
-    // رابطك المباشر أو رابط التحميل
-    const directLink = "https://equatoriallip.com/WE984B/"; 
+    // الإعدادات الخاصة بك
+    const directAdsLink = "https://equatoriallip.com/WE984B"; // رابط الإعلان الخاص بك
+    const mediaFireLink = "https://www.mediafire.com/file/YOUR_FILE_LINK"; // ضع هنا رابط ميديا فاير الحقيقي الخاص بك
 
     const countdown = setInterval(() => {
         timeLeft--;
-        timerElement.textContent = timeLeft;
+        if (timerElement) timerElement.textContent = timeLeft;
 
         if (timeLeft === 10) statusText.textContent = "تحسين استقرار المعالج (Overclocking)...";
         if (timeLeft === 5) statusText.textContent = "تجهيز كود Extreme FPS...";
 
         if (timeLeft <= 0) {
             clearInterval(countdown);
-            timerElement.parentElement.textContent = "تحميل الملف الآن 📥";
+            downloadBtn.innerHTML = "تحميل الملف الآن 📥";
             downloadBtn.disabled = false;
             statusText.textContent = "الملف جاهز للتحميل!";
             
-            // عند الضغط على الزر يتم التوجيه
             downloadBtn.onclick = function() {
-                window.location.href = directLink;
+                // فتح الإعلان في نافذة جديدة
+                window.open(directAdsLink, '_blank');
+                
+                // تحويل الصفحة الحالية إلى ميديا فاير بعد نصف ثانية
+                setTimeout(() => {
+                    window.location.href = mediaFireLink;
+                }, 500);
             };
         }
     }, 1000);
