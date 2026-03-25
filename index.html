@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poco X3 120 FPS - SALAH .DZ</title>
-    <link rel="preload" as="image" href="https://f.top4top.io/p_3736whw5q0.png">
     
     <style>
         body { background-color: #050505; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
         .container { max-width: 400px; margin: auto; background: #111; padding: 25px; border-radius: 20px; border: 1px solid #ff0055; box-shadow: 0 0 25px rgba(255,0,85,0.2); }
         
-        .img-container { width: 100%; min-height: 180px; background: #1a1a1a; border-radius: 12px; margin-bottom: 15px; overflow: hidden; }
-        img { width: 100%; height: auto; display: block; }
-        
         h2 { color: #ff0055; margin-top: 0; text-shadow: 0 0 10px rgba(255,0,85,0.5); }
         .fps-badge { background: #ff0055; color: white; padding: 5px 15px; border-radius: 50px; font-size: 14px; font-weight: bold; }
 
-        button { background: #ff0055; color: #fff; padding: 16px; border: none; border-radius: 10px; font-weight: bold; width: 100%; cursor: pointer; font-size: 17px; transition: 0.3s; margin-top: 15px; }
-        button:disabled { background: #333; color: #777; cursor: not-allowed; }
+        /* تنسيق زر التحميل لضمان ظهوره */
+        #btn {
+            background: #ff0055;
+            color: #fff;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            font-size: 17px;
+            transition: 0.3s;
+            margin-top: 20px;
+            display: block; /* ضمان الظهور كعنصر كتلي */
+        }
         
-        #status { margin-top: 15px; color: #ff0055; font-size: 13px; font-weight: bold; }
+        #btn:disabled { background: #333; color: #777; cursor: not-allowed; }
+        
+        #status { margin-top: 15px; color: #ff0055; font-size: 13px; font-weight: bold; min-height: 1.5em; }
+        #timer-container { font-size: 18px; margin-top: 10px; color: #ccc; }
+        #timer { font-weight: bold; color: #ff4757; font-size: 20px; }
     </style>
 </head>
 <body>
@@ -27,8 +40,64 @@
 <div class="container">
     <h2>SALAH .DZ <span class="fps-badge">120 FPS</span></h2>
     
-    <div class="img-container">
-        <img src="https://f.top4top.io/p_3736whw5q0.png" alt="120 FPS Proof" loading="eager">
-    </div>
+    <p style="font-size: 14px; color: #ccc;">تفعيل 120 FPS فائق السلاسة لـ Poco X3 Pro (نسخة 2026)</p>
+
+    <div id="timer-container">انتظر (<span id="timer">15</span>) ثانية...</div>
+
+    <button id="btn" disabled>جاري التجهيز...</button>
     
-    <p style="font-size: 14px; color: #ccc;">تفعيل
+    <div id="status">جاري فحص معدل التحديث (120Hz)...</div>
+</div>
+
+<script>
+    // تأكد من أن الكود يعمل بعد تحميل الصفحة
+    window.onload = function() {
+        let sec = 15;
+        const btn = document.getElementById('btn');
+        const timer = document.getElementById('timer');
+        const timerContainer = document.getElementById('timer-container');
+        const status = document.getElementById('status');
+
+        // الروابط الخاصة بك
+        const adLink = "https://equatoriallip.com/WE984B";
+        const mediaLink = "https://www.mediafire.com/file/YOUR_120FPS_FILE"; // ضع رابط ملف الـ 120 فريم هنا
+
+        const counter = setInterval(() => {
+            sec--;
+            if(timer) timer.innerText = sec;
+            
+            if (sec === 12) status.innerText = "كسر حماية التردد (Overclock Refresh Rate)...";
+            if (sec === 8) status.innerText = "تعديل ملف Config لـ 120 فريم...";
+            if (sec === 4) status.innerText = "تجهيز ملف 'Extreme FPS' النهائي...";
+
+            if (sec <= 0) {
+                clearInterval(counter);
+                timerContainer.style.display = 'none'; // إخفاء العداد بعد الانتهاء
+                btn.innerText = "تحميل ملف 120 FPS الآن 🚀";
+                btn.disabled = false; // تفعيل الزر
+                status.innerText = "الملف جاهز للحقن!";
+            }
+        }, 1000);
+
+        btn.onclick = function() {
+            // المرحلة الأولى: فتح الإعلان
+            window.open(adLink, '_blank');
+            
+            // المرحلة الثانية: تغيير الزر للانتقال للميديا فاير
+            setTimeout(() => {
+                status.innerText = "تم فتح الإعلان. اضغط مرة أخرى للانتقال للتحميل.";
+                btn.innerText = "تأكيد الانتقال للميديا فاير ✅";
+                btn.style.background = "#00ffa3"; // تغيير اللون للأخضر للتأكيد
+                btn.style.color = "#000";
+                
+                // تغيير وظيفة الضغط للمرحلة الثانية
+                btn.onclick = function() {
+                    window.location.href = mediaLink;
+                };
+            }, 500); // تأخير بسيط لضمان فتح الإعلان
+        };
+    };
+</script>
+
+</body>
+</html>
