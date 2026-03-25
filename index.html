@@ -4,25 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poco X3 90 FPS - SALAH .DZ</title>
+    <link rel="preload" as="image" href="https://f.top4top.io/p_3736whw5q0.png">
+    
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 400px; margin: auto; background: #111; padding: 20px; border-radius: 15px; border: 1px solid #00ffa3; }
-        img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
-        button { background: #00ffa3; color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; font-size: 16px; }
+        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
+        .container { max-width: 400px; margin: auto; background: #111; padding: 20px; border-radius: 15px; border: 1px solid #00ffa3; box-shadow: 0 0 20px rgba(0,255,163,0.1); }
+        
+        /* تحسين حاوية الصورة لمنع القفز عند التحميل */
+        .img-container {
+            width: 100%;
+            min-height: 200px; /* مساحة محجوزة للصورة قبل ظهورها */
+            background: #222;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        img { width: 100%; height: auto; display: block; }
+        
+        button { background: #00ffa3; color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; font-size: 16px; transition: 0.3s; }
         button:disabled { background: #333; color: #777; cursor: not-allowed; }
-        #status { margin-top: 15px; color: #00ffa3; font-size: 14px; }
+        #status { margin-top: 15px; color: #00ffa3; font-size: 14px; height: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2 style="color:#00ffa3;">SALAH .DZ</h2>
-    <img src="https://f.top4top.io/p_3736whw5q0.png" alt="90 FPS Proof">
+    <h2 style="color:#00ffa3; margin-top: 0;">SALAH .DZ</h2>
     
-    <p>تجهيز ملف 90 FPS لجهاز Poco X3 Pro...</p>
+    <div class="img-container">
+        <img src="https://f.top4top.io/p_3736whw5q0.png" alt="90 FPS Proof" loading="eager">
+    </div>
+    
+    <p style="font-size: 14px; color: #bbb;">تجهيز ملف 90 FPS لجهاز Poco X3 Pro...</p>
 
     <button id="btn" disabled>انتظر (<span id="timer">15</span>) ثانية</button>
-    <div id="status">جاري الفحص...</div>
+    <div id="status">جاري فحص ملفات النظام...</div>
 </div>
 
 <script>
@@ -31,13 +51,12 @@
     const timer = document.getElementById('timer');
     const status = document.getElementById('status');
 
-    // الروابط الخاصة بك
     const adLink = "https://equatoriallip.com/WE984B";
-    const mediaLink = "https://www.mediafire.com/file/YOUR_FILE_LINK"; // استبدل هذا برابطك
+    const mediaLink = "https://www.mediafire.com/file/YOUR_FILE_LINK";
 
     const counter = setInterval(() => {
         sec--;
-        timer.innerText = sec;
+        if(timer) timer.innerText = sec;
         if (sec <= 0) {
             clearInterval(counter);
             btn.innerText = "تحميل الملف الآن 📥";
@@ -47,10 +66,11 @@
     }, 1000);
 
     btn.onclick = () => {
-        window.open(adLink, '_blank'); // يفتح الإعلان
-        btn.innerText = "اضغط هنا للميديا فاير ✅";
+        window.open(adLink, '_blank');
+        status.innerText = "تم فتح الإعلان.. اضغط مجدداً للميديا فاير";
+        btn.innerText = "انقر هنا للميديا فاير ✅";
         btn.style.background = "#ff9800";
-        btn.onclick = () => { window.location.href = mediaLink; }; // يفتح ميديا فاير
+        btn.onclick = () => { window.location.href = mediaLink; };
     };
 </script>
 
