@@ -5,64 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poco X3 Extreme FPS - SALAH .DZ</title>
     <style>
-        body { background-color: #0f0f0f; color: #e0e0e0; font-family: sans-serif; text-align: center; padding: 30px 10px; margin: 0; }
-        .container { max-width: 500px; margin: 0 auto; background: #1a1a1a; padding: 25px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        h1 { color: #00ffa3; font-size: 22px; margin-bottom: 5px; }
-        .author { color: #888; font-size: 14px; margin-bottom: 20px; }
+        body { background-color: #0b0b0b; color: #f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 20px 15px; margin: 0; }
+        .container { max-width: 450px; margin: 0 auto; background: #151515; padding: 20px; border-radius: 20px; border: 1px solid #00ffa333; box-shadow: 0 15px 35px rgba(0,0,0,0.7); }
+        h1 { color: #00ffa3; font-size: 22px; margin-bottom: 5px; text-shadow: 0 0 10px rgba(0,255,163,0.3); }
+        .author { color: #777; font-size: 13px; margin-bottom: 15px; letter-spacing: 1px; }
         
-        /* تنسيق الصورة */
+        /* تنسيق الصورة التي أرسلتها */
         .proof-img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 320px;
             height: auto;
-            border-radius: 10px;
-            border: 2px solid #333;
+            border-radius: 12px;
+            border: 1px solid #333;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
 
-        #download-btn { background-color: #00ffa3; color: #000; padding: 15px 25px; border: none; border-radius: 8px; font-weight: bold; font-size: 17px; cursor: pointer; display: inline-block; transition: 0.3s; margin-top: 15px; text-decoration: none; width: 100%; box-sizing: border-box;}
-        #download-btn:disabled { background-color: #444; color: #888; cursor: not-allowed; }
-        #status-text { margin-top: 20px; font-size: 14px; color: #aaa; min-height: 1em; }
-        #timer { font-weight: bold; color: #ff4757; }
-    </style>
-</head>
-<body>
+        .info-box { background: #222; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-right: 4px solid #00ffa3; }
+        p { font-size: 14px; line-height: 1.6; margin: 0; color: #ccc; }
 
-<div class="container">
-    <h1>تفعيل 90 FPS لـ Poco X3 Pro</h1>
-    <div class="author">By SALAH .DZ</div>
-
-    <img src="screenshot.jpg" alt="إثبات تفعيل 90 فريم" class="proof-img">
-
-    <p style="font-size: 15px;">جاري تجهيز كود Extreme FPS الآمن تماماً...</p>
-
-    <button id="download-btn" disabled>
-        يرجى الانتظار (<span id="timer">15</span>) ثانية
-    </button>
-
-    <div id="status-text">جاري فحص حالة KernelSU/Magisk...</div>
-</div>
-
-<script>
-    let timeLeft = 15;
-    const downloadBtn = document.getElementById('download-btn');
-    const timerElement = document.getElementById('timer');
-    const statusText = document.getElementById('status-text');
-
-    // الروابط الخاصة بك
-    const directAdsLink = "https://equatoriallip.com/WE984B"; 
-    const mediaFireLink = "https://www.mediafire.com/file/YOUR_FILE_LINK"; // !!! استبدل هذا برابط ميديا فاير الحقيقي !!!
-
-    const countdown = setInterval(() => {
-        timeLeft--;
-        if (timerElement) timerElement.textContent = timeLeft;
-
-        if (timeLeft === 12) statusText.textContent = "تحسين استقرار المعالج (Overclocking)...";
-        if (timeLeft === 8) statusText.textContent = "تعديل ملفات التعريف (Game Profiles)...";
-        if (timeLeft === 4) statusText.textContent = "تجهيز كود Extreme FPS لـ Poco X3 Pro...";
-
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            downloadBtn.innerHTML = "تحميل الملف الآن 📥";
-            downloadBtn.disabled = false;
-            status
+        #download-btn { 
+            background: linear-gradient(135deg, #00ffa3, #00bd79); 
+            color: #000; padding: 16px; border: none; border-radius: 12px; 
+            font-weight: bold; font-size: 18px; cursor: pointer; display: inline-block; 
+            transition: 0.3s; width: 100%; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,255,163,0.2);
+        }
+        
+        #download-btn:disabled
