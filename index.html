@@ -3,97 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفعيل 120 FPS - مركز التحميل</title>
+    <title>تحميل 120 FPS</title>
 
+    <script>
+       /* هنا تلصق الكود البرمجي الطويل الخاص بـ HilltopAds */
+    </script>
     <style>
-        /* تنسيق الصفحة لتناسب شاشات الجوال مثل Poco X3 Pro */
-        body {
-            background-color: #0d1117;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
-            text-align: center;
-        }
-
-        /* حاوية البانرات */
-        .ad-section {
-            width: 100%;
-            min-height: 100px;
-            background: #161b22;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #30363d;
-        }
-
-        .bottom-ad {
-            border-bottom: none;
-            border-top: 1px solid #30363d;
-        }
-
-        /* منطقة المحتوى والعداد في المنتصف */
-        .content-middle {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .card {
-            background: #1c2128;
-            padding: 40px 20px;
-            border-radius: 20px;
-            border: 1px solid #30363d;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            width: 100%;
-            max-width: 450px;
-        }
-
-        #timer-title { font-size: 16px; color: #8b949e; margin-bottom: 15px; }
-        
-        #countdown {
-            font-size: 50px;
-            font-weight: bold;
-            color: #58a6ff;
-            text-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
-        }
-
-        /* زر التحميل الاحترافي */
-        .download-btn {
-            display: none; /* مخفي حتى ينتهي العداد */
-            background: linear-gradient(135deg, #238636, #2ea043);
-            color: white;
-            padding: 18px 40px;
-            border: none;
-            border-radius: 12px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            width: 100%;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .download-btn:hover {
-            transform: scale(1.03);
-            background: linear-gradient(135deg, #2ea043, #3fb950);
-        }
+        /* تنسيقات الصفحة (CSS) */
+        body { background-color: #0d1117; color: white; text-align: center; font-family: sans-serif; }
+        .container { max-width: 400px; margin: 100px auto; padding: 20px; background: #1c2128; border-radius: 10px; }
+        #downloadBtn { display: none; background: #238636; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="ad-section">
-        <script>
-        (function(ihmv){
-        var d = document, s = d.createElement('script'), l = d.scripts[d.scripts.length - 1];
-        s.settings = ihmv || {};
-        s.src = "\/\/stale-father.com\/brXDV.s-ddGslR0eY_WXcw\/he\/mz9euPZOUCl\/keP\/TYYl5WM\/DpI
+    <div class="container">
+        <h2>رابط ميديا فاير جاهز</h2>
+        <div id="timer">انتظر <span id="count">15</span> ثانية...</div>
+        <button id="downloadBtn">تحميل الآن</button>
+    </div>
+
+    <script>
+        // كود العداد التنازلي والتحويل المزدوج
+        let timeLeft = 15;
+        const directLink = "https://equatoriallip.com/WE984B"; // رابطك المباشر
+        const mediafire = "https://www.mediafire.com"; // رابط ميديا فاير
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            document.getElementById('count').textContent = timeLeft;
+            if(timeLeft <= 0) {
+                clearInterval(timer);
+                document.getElementById('timer').style.display = 'none';
+                document.getElementById('downloadBtn').style.display = 'inline-block';
+            }
+        }, 1000);
+
+        document.getElementById('downloadBtn').onclick = function() {
+            window.open(directLink, '_blank');
+            setTimeout(() => { window.location.href = mediafire; }, 800);
+        };
+    </script>
+</body>
+</html>
